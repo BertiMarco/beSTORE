@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.PrendiLasciaFragments.CausaleFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/causale_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/causale_label"
+            android:padding="10dp"
+            android:textSize="30dp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Spinner
+            android:id="@+id/causale_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/causale_label">
+        </Spinner>
+
+        <EditText
+            android:id="@+id/causale_textArea"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inputType="text"
+            android:hint="Evento..."
+            android:gravity="top"
+            app:layout_constraintTop_toBottomOf="@id/causale_spinner"
+            app:layout_constraintBottom_toTopOf="@id/next_button"/>
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/next_button" />
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">beSTORE</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">beSTORE</string>
+    <string name="nav_header_subtitle">info.app@belivegroup.it</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="prendi_lascia">Prendi/Lascia</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="prendi_button">Prendi</string>
+    <string name="lascia_button">Lascia</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="causale_label">Seleziona evento</string>
+    <string name="next_button">Avanti</string>
+    <string name="found_dialog_title">Trovato, aggiungere?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annulla</string>
+    <string name="done_button_text">Fatto</string>
+    <string name="welcome_label">Benvenuto</string>
+    <string name="IMEI_label">IMEI</string>
+    <string name="name_label">NOME</string>
+    <string name="login_button">Accedi</string>
+    <string name="unregistered_label">Non sei registrato! Contatta un amministratore per avere accessoa al magazzino.</string>
+    <string name="recap_label">Ricapitolando:</string>
+    <string name="recap_causale_label">Causale:</string>
+    <string name="recap_user_label">Utente:</string>
+    <string name="recap_date_label">Data:</string>
+    <string name="item_name_label">Nome</string>
+    <string name="end_button">Fine</string>
+    <string name="back_button">Indietro</string>
+    <string name="edit_button">Modifica</string>
+    <string name="liste">La Mia Lista</string>
+    <string name="leave_dialog_title">Deposita oggetto</string>
+</resources>
