@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.vision.L;
+
 import java.util.ArrayList;
 
 import it.univr.mb.magazza.Activity.PrendiLasciaFragments.CausaleFragment;
@@ -116,6 +118,7 @@ public class PrendiActivity extends AppCompatActivity {
     public void itemNotFound() {
         //TODO genera log di errore
         Toast.makeText(this, "Oggetto non registrato", Toast.LENGTH_SHORT).show();
+        ((QrPrendiFragment)nextFragment).startCamera();
     }
 
     public void dispose() {
