@@ -32,7 +32,7 @@ import it.univr.mb.magazza.Model.User;
 
 public class DBInterface {
     private final static String TAG = "DBinterface:";
-    private final static String url = "http://157.27.155.34:5000/"; //TODO metti nelle impostazioni
+    private final static String url = "http://157.27.144.184:5000/"; //TODO metti nelle impostazioni
 
     public void isImeiRegistered(Context context, String imei) {
         RequestQueue queue = Volley.newRequestQueue(context);

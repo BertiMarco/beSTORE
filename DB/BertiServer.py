@@ -48,7 +48,7 @@ def product_detail():
                         WHERE id = %s AND id NOT IN
                         (SELECT id
                         FROM prestito
-                        WHERE id_oggetto = %s)""", (id, id,))
+                        WHERE id_oggetto = %s AND restituito_il IS NULL)""", (id, id,))
         print(cur.rowcount)
         if cur.rowcount >= 1:
             for line in cur:
@@ -98,7 +98,7 @@ def event_for_user():
     print('L\'imei è:', imei)
 
     with conn.cursor() as cur:
-        cur.execute('SELECT DISTINCT evento FROM prestito WHERE imei_utente = %s', (imei,))
+        cur.execute('SELECT DISTINCT evento FROM prestito WHERE imei_utente = %s AND restituito_il IS NULL', (imei,))
         print(cur.rowcount)
         words = []
         if cur.rowcount >= 1:
@@ -124,7 +124,7 @@ def get_item_to_leave():
                         WHERE id = %s AND id IN
                         (SELECT id
                         FROM prestito
-                        WHERE id_oggetto = %s)""", (id, id,))
+                        WHERE id_oggetto = %s AND restituito_il IS NULL)""", (id, id,))
         print(cur.rowcount)
         if cur.rowcount >= 1:
             for line in cur:
@@ -151,9 +151,7 @@ def leave_items():
             date,
             item,
         ))
-    q = """UPDATE storico SET restituito_da = %s, restituito_il = %s WHERE id_oggetto = %s"""
-
-    # #TODO-> un po' da sistemare.
+    q = """UPDATE prestito SET restituito_da = %s, restituito_il = %s WHERE id_oggetto = %s AND restituito_il IS NULL"""
 
     with conn.cursor() as cur:
         cur.executemany(q, itemBank)

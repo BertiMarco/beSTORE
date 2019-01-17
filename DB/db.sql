@@ -16,15 +16,6 @@ CREATE TABLE oggetto(
 CREATE TABLE prestito(
     id_oggetto SERIAL REFERENCES oggetto,
     imei_utente VARCHAR REFERENCES utente,
-    preso_il TIMESTAMP NOT NULL,
-    evento VARCHAR NOT NULL
-    PRIMARY KEY(id_oggetto, imei_utente)
-);
-
-
-CREATE TABLE storico(
-    id_oggetto SERIAL REFERENCES oggetto,
-    imei_utente VARCHAR REFERENCES utente,
     preso_il TIMESTAMP,
     evento VARCHAR NOT NULL,
     restituito_il TIMESTAMP,
