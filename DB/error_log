@@ -1,0 +1,51 @@
+[18-Jan-2019 13:18:37 Europe/Rome] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'username'@'localhost' (using password: YES) in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 8
+[18-Jan-2019 13:20:20 Europe/Rome] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'xsigomft_bestore'@'unikoliving.it' (using password: YES) in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 8
+[18-Jan-2019 13:40:12 Europe/Rome] PHP Warning:  file_get_contents(DB.sql): failed to open stream: No such file or directory in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 16
+[18-Jan-2019 13:40:12 Europe/Rome] PHP Warning:  mysqli::query(): Empty query in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 17
+[18-Jan-2019 13:40:12 Europe/Rome] PHP Warning:  mysqli::query(): Empty query in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 19
+[18-Jan-2019 13:40:56 Europe/Rome] PHP Warning:  file_get_contents(DB.sql): failed to open stream: No such file or directory in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 15
+[18-Jan-2019 13:40:56 Europe/Rome] PHP Warning:  mysqli::query(): Empty query in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 16
+[18-Jan-2019 13:40:56 Europe/Rome] PHP Warning:  mysqli::query(): Empty query in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 18
+[18-Jan-2019 13:41:41 Europe/Rome] PHP Warning:  file_get_contents(DB.sql): failed to open stream: No such file or directory in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 15
+[18-Jan-2019 13:41:41 Europe/Rome] PHP Warning:  mysqli::query(): Empty query in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 17
+[18-Jan-2019 13:41:41 Europe/Rome] PHP Warning:  mysqli::query(): Empty query in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 19
+[18-Jan-2019 14:10:46 Europe/Rome] PHP Parse error:  syntax error, unexpected 'var_dump' (T_STRING) in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 20
+[18-Jan-2019 17:06:40 Europe/Rome] PHP Parse error:  syntax error, unexpected '$conn' (T_VARIABLE) in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 24
+[18-Jan-2019 17:07:38 Europe/Rome] PHP Notice:  Undefined index: query in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 19
+[18-Jan-2019 17:40:30 Europe/Rome] PHP Notice:  Undefined index: query in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 19
+[18-Jan-2019 17:41:59 Europe/Rome] PHP Parse error:  syntax error, unexpected '$stmt' (T_VARIABLE) in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 19
+[18-Jan-2019 17:47:05 Europe/Rome] PHP Parse error:  syntax error, unexpected '"</br>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 28
+[18-Jan-2019 17:48:11 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 17:49:05 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 17:49:16 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 17:53:08 Europe/Rome] PHP Notice:  Undefined index: query in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 19
+[18-Jan-2019 18:01:22 Europe/Rome] PHP Recoverable fatal error:  Object of class mysqli_stmt could not be converted to string in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 18:01:31 Europe/Rome] PHP Recoverable fatal error:  Object of class mysqli_stmt could not be converted to string in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 18:01:41 Europe/Rome] PHP Recoverable fatal error:  Object of class mysqli_stmt could not be converted to string in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 18:01:45 Europe/Rome] PHP Recoverable fatal error:  Object of class mysqli_stmt could not be converted to string in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 18:01:47 Europe/Rome] PHP Recoverable fatal error:  Object of class mysqli_stmt could not be converted to string in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 18:30:02 Europe/Rome] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 36
+[18-Jan-2019 18:30:19 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/select_all.php on line 23
+[18-Jan-2019 18:33:22 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/select_all.php on line 23
+[18-Jan-2019 18:33:26 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/select_all.php on line 23
+[18-Jan-2019 18:35:10 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/select_all.php on line 23
+[18-Jan-2019 18:35:20 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/select_all.php on line 23
+[18-Jan-2019 18:56:05 Europe/Rome] PHP Notice:  Undefined variable: res in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 18:56:05 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to a member function bind_result() on null in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 19:00:06 Europe/Rome] PHP Notice:  Undefined variable: res in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20
+[18-Jan-2019 19:00:06 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to a member function bind_result() on null in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/check_imei.php on line 20

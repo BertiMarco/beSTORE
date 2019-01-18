@@ -88,7 +88,6 @@ public class QrPrendiFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        ((PrendiActivity)getActivity()).requestCameraPermissions();
         mBarcodeDetector = new BarcodeDetector.Builder(getContext()).setBarcodeFormats(Barcode.QR_CODE).build();
         mCameraSource = new CameraSource.Builder(getContext(), mBarcodeDetector)
                 .setRequestedPreviewSize(640, 480)

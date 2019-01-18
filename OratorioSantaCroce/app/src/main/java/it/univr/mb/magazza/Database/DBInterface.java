@@ -32,12 +32,12 @@ import it.univr.mb.magazza.Model.User;
 
 public class DBInterface {
     private final static String TAG = "DBinterface:";
-    private final static String url = "http://157.27.144.184:5000/"; //TODO metti nelle impostazioni
+    private final static String url = "http://store.believegroup.it/beSTORE/"; //TODO metti nelle impostazioni
 
     public void isImeiRegistered(Context context, String imei) {
         RequestQueue queue = Volley.newRequestQueue(context);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "check_imei/",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "check_imei.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -45,8 +45,10 @@ public class DBInterface {
                             String nome = response.split(",")[1];
                             String cognome = response.split(",")[2];
                             ObjectBuilder.getInstance().loginAccepted(nome, cognome, imei);
-                        } else
+                        } else {
                             ObjectBuilder.getInstance().loginFailed();
+                            Log.d(TAG, response);
+                        }
                     }
                 },
                 new Response.ErrorListener() {

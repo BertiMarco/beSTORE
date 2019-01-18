@@ -34,6 +34,9 @@ public class PrendiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prendi);
 
+        if(!checkCameraPermission())
+            requestCameraPermissions();
+
         if (nextFragment == null)
             nextFragment = new CausaleFragment();
 

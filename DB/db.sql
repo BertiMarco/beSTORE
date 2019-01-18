@@ -1,24 +1,24 @@
 CREATE TABLE utente(
-    nome VARCHAR,
-    cognome VARCHAR,
-    imei VARCHAR PRIMARY KEY
+    nome VARCHAR(255),
+    cognome VARCHAR(255),
+    imei VARCHAR(255) PRIMARY KEY
 );
 
 CREATE TABLE oggetto(
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR NOT NULL,
-    immagine VARCHAR,
-    marca VARCHAR,
+    id VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    immagine VARCHAR(255),
+    marca VARCHAR(255),
     anno INTEGER,
     lunghezza NUMERIC(5,2)    
 );
 
 CREATE TABLE prestito(
     id_oggetto SERIAL REFERENCES oggetto,
-    imei_utente VARCHAR REFERENCES utente,
+    imei_utente VARCHAR(255) REFERENCES utente,
     preso_il TIMESTAMP,
-    evento VARCHAR NOT NULL,
+    evento VARCHAR(255) NOT NULL,
     restituito_il TIMESTAMP,
-    restituito_da VARCHAR REFERENCES utente
+    restituito_da VARCHAR(255) REFERENCES utente,
     PRIMARY KEY(id_oggetto, imei_utente, preso_il)
 );

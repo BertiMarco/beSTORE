@@ -54,7 +54,7 @@ public class QrLasciaFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((LasciaActivity)getActivity()).requestCameraPermissions();
+
         mBarcodeDetector = new BarcodeDetector.Builder(getContext()).setBarcodeFormats(Barcode.QR_CODE).build();
         mCameraSource = new CameraSource.Builder(getContext(), mBarcodeDetector)
                 .setRequestedPreviewSize(640, 480)

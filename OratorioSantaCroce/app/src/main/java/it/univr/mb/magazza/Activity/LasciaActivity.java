@@ -24,6 +24,10 @@ public class LasciaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lascia);
         //qui vado a selezionare dove lascaire gli oggetti
+
+        if (!checkCameraPermission())
+            requestCameraPermissions();
+
         if (nextFragment == null)
             nextFragment = new QrLasciaFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_lascia, nextFragment).commit();
