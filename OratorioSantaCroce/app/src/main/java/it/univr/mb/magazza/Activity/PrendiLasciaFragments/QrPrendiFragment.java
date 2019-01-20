@@ -187,7 +187,7 @@ public class QrPrendiFragment extends Fragment {
                 if (! b.rawValue.equals(precedentValue)){
                     Log.d(TAG, "Value: " + b.rawValue);
                     Log.d(TAG, "sparse size: " + barcodes.size() + "\n\nvalue: " + barcodes.toString());
-                    ObjectBuilder.getInstance().getItem(b.rawValue, (PrendiActivity)getActivity());
+                    ObjectBuilder.getInstance().getItem(b.rawValue.trim(), (PrendiActivity)getActivity());
                     new CameraThread(mCameraSource).start();
                 }
                 precedentValue = b.rawValue;

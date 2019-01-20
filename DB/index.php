@@ -28,7 +28,7 @@ if ($conn->connect_error) {
 } 
 echo "Connessione riuscita\n";
 
-$sql = "INSERT INTO utente (imei, nome, cognome) VALUES ('353490069677058', 'Marco', 'Berti')";
+$sql = "UPDATE oggetto SET nome = 'microfono' WHERE id = 'bestore_3'";
 echo "</br>";
 var_dump($sql);
 $result = $conn->query($sql);
@@ -36,7 +36,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo $row . "</br>";
+        foreach($row as $value)
+            echo $value . "</br>";
     }
 } 
 else {

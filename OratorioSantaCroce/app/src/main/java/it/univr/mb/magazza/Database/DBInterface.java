@@ -41,6 +41,7 @@ public class DBInterface {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        Log.d(TAG, "RISPOSTA" + response);
                         if (response.substring(0, 2).equals("ok")) {
                             String nome = response.split(",")[1];
                             String cognome = response.split(",")[2];
@@ -70,11 +71,14 @@ public class DBInterface {
     }
 
     public void getItem(String id, Context context) {
+        int counter  = 0;
+
         RequestQueue queue = Volley.newRequestQueue(context);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "product_detail/",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "product_detail.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        Log.d(TAG, "RISPOSTA PRODOTTO: " + response);
                         if (response.substring(0, 2).equals("ok")) {
                             String id = response.split(",")[1];
                             String nome = response.split(",")[2];
@@ -99,15 +103,15 @@ public class DBInterface {
                 return params;
             }
         };
+        Log.d(TAG, "RICHIESTA: ");
         queue.add(stringRequest);
+        counter++;
+        Log.d(TAG, "eseguita #" + counter);
     }
 
     public void commitBorrow(PrendiActivity activity) {
         RequestQueue queue = Volley.newRequestQueue(activity);
-
         Borrow mBorrow = ObjectBuilder.getInstance().getBorrow();
-
-        JSONObject requestBody = new JSONObject();
 
         String ids;
         StringBuilder stringBuilder = new StringBuilder();
@@ -118,7 +122,7 @@ public class DBInterface {
         ids = stringBuilder.toString();
 
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "add_to_borrow/",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "add_to_borrow.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -151,7 +155,7 @@ public class DBInterface {
 
     public void getItemToLeave(String rawValue, Context applicationContext) {
         RequestQueue queue = Volley.newRequestQueue(applicationContext);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "get_item_to_leave/",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "get_item_to_leave.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -182,11 +186,12 @@ public class DBInterface {
         };
         queue.add(stringRequest);
 
-}
+
+    }
 
     public void getEvents(Context context) {
         RequestQueue queue = Volley.newRequestQueue(context);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url+"events_for_user/",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url+"events.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -228,7 +233,7 @@ public class DBInterface {
     public void commitLeave(ArrayList<Item> itemsToLeave, LasciaActivity activity) {
         RequestQueue queue = Volley.newRequestQueue(activity);
 
-        Borrow mBorrow = ObjectBuilder.getInstance().getBorrow();
+        User user = ObjectBuilder.getInstance().getCurrentUser();
 
         String ids;
         StringBuilder stringBuilder = new StringBuilder();
@@ -239,7 +244,7 @@ public class DBInterface {
         ids = stringBuilder.toString();
 
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "leave_items/",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "leave_items.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -258,7 +263,7 @@ public class DBInterface {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("imei", mBorrow.getUser().getImeiCode());
+                params.put("imei", user.getImeiCode());
                 params.put("itemsID", ids);
                 params.put("date", String.valueOf(System.currentTimeMillis()));
                 return params;

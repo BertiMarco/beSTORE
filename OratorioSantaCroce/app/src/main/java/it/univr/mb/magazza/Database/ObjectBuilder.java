@@ -148,7 +148,7 @@ public class ObjectBuilder {
     }
 
     public void leaveCommitted() {
-        Toast.makeText(mPrendiActivity, "Oggetti depositati", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mLasciaActivity, "Oggetti depositati", Toast.LENGTH_SHORT).show();
         mLasciaActivity.dispose();
     }
 }
