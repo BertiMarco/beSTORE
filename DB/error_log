@@ -1,60 +1,91 @@
-[20-Jan-2019 16:56:41 Europe/Rome] bestore_2
-[20-Jan-2019 16:56:41 Europe/Rome] bestore_2
-[20-Jan-2019 16:56:51 Europe/Rome] bestore_1
-[20-Jan-2019 16:56:51 Europe/Rome] bestore_1
-[20-Jan-2019 16:59:59 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/events.php on line 20
-[20-Jan-2019 17:00:44 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/events.php on line 20
-[20-Jan-2019 17:02:23 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/events.php on line 20
-[20-Jan-2019 17:08:46 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/events.php on line 20
-[20-Jan-2019 17:11:22 Europe/Rome] PHP Notice:  Array to string conversion in /home/xsigomft/store.believegroup.it/beSTORE/events.php on line 20
-[20-Jan-2019 17:20:30 Europe/Rome] PHP Notice:  Undefined index: causale in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 15
-[20-Jan-2019 17:20:30 Europe/Rome] PHP Notice:  Undefined index: imei in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 16
-[20-Jan-2019 17:20:30 Europe/Rome] PHP Notice:  Undefined index: date in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 17
-[20-Jan-2019 17:20:30 Europe/Rome] PHP Notice:  Undefined index: itemsID in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 19
-[20-Jan-2019 17:20:51 Europe/Rome] PHP Notice:  Undefined index: causale in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 15
-[20-Jan-2019 17:20:51 Europe/Rome] PHP Notice:  Undefined index: imei in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 16
-[20-Jan-2019 17:20:51 Europe/Rome] PHP Notice:  Undefined index: date in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 17
-[20-Jan-2019 17:20:51 Europe/Rome] PHP Notice:  Undefined index: itemsID in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 19
-[20-Jan-2019 17:21:34 Europe/Rome] PHP Notice:  Undefined index: causale in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 15
-[20-Jan-2019 17:21:34 Europe/Rome] PHP Notice:  Undefined index: imei in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 16
-[20-Jan-2019 17:21:34 Europe/Rome] PHP Notice:  Undefined index: date in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 17
-[20-Jan-2019 17:21:34 Europe/Rome] PHP Notice:  Undefined index: itemsID in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 19
-[20-Jan-2019 17:30:57 Europe/Rome] bestore_3
-[20-Jan-2019 17:30:57 Europe/Rome] bestore_3
-[20-Jan-2019 17:31:12 Europe/Rome] PHP Notice:  Undefined index: date in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 17
-[20-Jan-2019 17:32:39 Europe/Rome] bestore_3
-[20-Jan-2019 17:32:39 Europe/Rome] bestore_3
-[20-Jan-2019 17:32:44 Europe/Rome] 20-01-2019 17:32:36.000000
-[20-Jan-2019 17:47:34 Europe/Rome] PHP Parse error:  syntax error, unexpected ',', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 30
-[20-Jan-2019 17:48:29 Europe/Rome] PHP Notice:  Undefined index: causale in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 15
-[20-Jan-2019 17:48:29 Europe/Rome] PHP Notice:  Undefined index: imei in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 16
-[20-Jan-2019 17:48:29 Europe/Rome] 2002-01-04 00:36:50.000000
-[20-Jan-2019 17:48:29 Europe/Rome] PHP Notice:  Undefined index: itemsID in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 20
-[20-Jan-2019 17:51:36 Europe/Rome] PHP Notice:  Undefined index: causale in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 15
-[20-Jan-2019 17:51:36 Europe/Rome] PHP Notice:  Undefined index: imei in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 16
-[20-Jan-2019 17:51:36 Europe/Rome] 2002-01-04 00:36:50.000000
-[20-Jan-2019 17:51:36 Europe/Rome] PHP Notice:  Undefined index: itemsID in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 20
-[20-Jan-2019 17:51:47 Europe/Rome] PHP Notice:  Undefined index: causale in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 15
-[20-Jan-2019 17:51:47 Europe/Rome] PHP Notice:  Undefined index: imei in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 16
-[20-Jan-2019 17:51:47 Europe/Rome] PHP Notice:  Undefined index: date in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 17
-[20-Jan-2019 17:51:47 Europe/Rome] PHP Notice:  Undefined index: itemsID in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 20
-[20-Jan-2019 17:55:11 Europe/Rome] bestore_3
-[20-Jan-2019 17:55:11 Europe/Rome] bestore_3
-[20-Jan-2019 17:55:19 Europe/Rome] bestore_2
-[20-Jan-2019 17:55:19 Europe/Rome] bestore_2
-[20-Jan-2019 17:56:57 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on boolean in /home/xsigomft/store.believegroup.it/beSTORE/get_item_to_leave.php:24
+[21-Jan-2019 17:17:09 Europe/Rome] PHP Notice:  Undefined index: pwd in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 92
+[21-Jan-2019 17:21:23 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:21:23 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to undefined function set_empty_to_null() in /home/xsigomft/store.believegroup.it/beSTORE/index.php:116
 Stack trace:
 #0 {main}
-  thrown in /home/xsigomft/store.believegroup.it/beSTORE/get_item_to_leave.php on line 24
-[20-Jan-2019 17:57:03 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on boolean in /home/xsigomft/store.believegroup.it/beSTORE/get_item_to_leave.php:24
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:22:03 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:22:03 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to undefined function set_empty_to_null() in /home/xsigomft/store.believegroup.it/beSTORE/index.php:116
 Stack trace:
 #0 {main}
-  thrown in /home/xsigomft/store.believegroup.it/beSTORE/get_item_to_leave.php on line 24
-[20-Jan-2019 17:58:13 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on boolean in /home/xsigomft/store.believegroup.it/beSTORE/get_item_to_leave.php:24
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:24:01 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:24:01 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to undefined function set_empty_to_null() in /home/xsigomft/store.believegroup.it/beSTORE/index.php:116
 Stack trace:
 #0 {main}
-  thrown in /home/xsigomft/store.believegroup.it/beSTORE/get_item_to_leave.php on line 24
-[20-Jan-2019 17:58:47 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on boolean in /home/xsigomft/store.believegroup.it/beSTORE/get_item_to_leave.php:24
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:24:14 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:24:14 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to undefined function set_empty_to_null() in /home/xsigomft/store.believegroup.it/beSTORE/index.php:116
 Stack trace:
 #0 {main}
-  thrown in /home/xsigomft/store.believegroup.it/beSTORE/get_item_to_leave.php on line 24
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:24:59 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:24:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:24:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:24:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:24:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:24:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:24:59 Europe/Rome] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:25:04 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:25:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:25:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:25:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:25:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:25:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:25:04 Europe/Rome] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:27:31 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:27:31 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:27:31 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:27:31 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:27:31 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:27:31 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:27:31 Europe/Rome] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 116
+[21-Jan-2019 17:28:55 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:28:55 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:55 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:55 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:55 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:55 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:55 Europe/Rome] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:59 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:28:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:59 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:28:59 Europe/Rome] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 117
+[21-Jan-2019 17:30:22 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:30:22 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:22 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:22 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:22 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:22 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:22 Europe/Rome] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:24 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:30:24 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:24 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:24 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:24 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:24 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:24 Europe/Rome] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:43 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:30:43 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:43 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:43 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:43 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:43 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:30:43 Europe/Rome] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:32:29 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:32:29 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:32:29 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:32:29 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:32:29 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:32:29 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:33:21 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:33:21 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:33:21 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:33:21 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:33:21 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:33:21 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:34:15 Europe/Rome] PHP Parse error:  syntax error, unexpected '<' in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 128
+[21-Jan-2019 17:34:34 Europe/Rome] PHP Parse error:  syntax error, unexpected '<' in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 128
