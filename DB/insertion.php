@@ -9,6 +9,13 @@
 
 <body>
 <?php
+
+    session_start();
+
+    if(!isset($_SESSION['login_user'])){
+        header("location: index.php");
+    }
+
     $servername = "localhost";
     $username = "xsigomft_bestore";
     $password = "bertistore;2019";
@@ -110,26 +117,19 @@
                 //fare INSERT
                 $sql = 'INSERT INTO oggetto(id, nome, marca, anno, lunghezza, posizione, descrizione)
                     VALUES(?, ?, ?, ?, ?, ?, ?)';
-                if(empty($anno)) {
-                    $anno = null;
-                    echo $anno;
-                }
-                else
-                    echo "CHAHAHAHAH";
 
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("sssssss", $id, $nome, set_empty_to_null($marca), set_empty_to_null($anno), set_empty_to_null($lunghezza), set_empty_to_null($posizione), set_empty_to_null($descrizione));
                 if($stmt->execute() == TRUE) {
                     $stmt->close();
                     $conn->close();
-                    header('Location: http://store.believegroup.it/beSTORE/test.html');
+                    header('Location: test.html');
                 }
                 else {
                     echo "NON VA UN CAZZO DI NIENTE </br>";
                     echo $stmt->error;
                 }
             }
-
         }
     }
     
@@ -151,7 +151,7 @@
 <h2>Aggiungi oggetto in magazzino</h2>
 <p><span class="error">* campi obbligatori</span></p>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        ID: <input type="text" name="id" value=" <?php echo $id;?> ">
+        ID: <input type="text" name="id" value="<?php echo $id;?>">
         <span class="error">*
             <?php echo $idErr;?></span>
         <br><br>

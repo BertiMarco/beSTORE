@@ -89,3 +89,29 @@ Stack trace:
 [21-Jan-2019 17:33:21 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
 [21-Jan-2019 17:34:15 Europe/Rome] PHP Parse error:  syntax error, unexpected '<' in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 128
 [21-Jan-2019 17:34:34 Europe/Rome] PHP Parse error:  syntax error, unexpected '<' in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 128
+[21-Jan-2019 17:35:04 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 17:35:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:35:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:35:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:35:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 17:35:04 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 19:13:08 Europe/Rome] PHP Warning:  Wrong parameter count for mysqli_stmt::bind_param() in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 101
+[21-Jan-2019 19:13:08 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 19:13:08 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 19:13:08 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 19:13:08 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 19:13:08 Europe/Rome] PHP Notice:  Only variables should be passed by reference in /home/xsigomft/store.believegroup.it/beSTORE/index.php on line 121
+[21-Jan-2019 19:23:09 Europe/Rome] 1
+[21-Jan-2019 19:23:09 Europe/Rome] 1
+[21-Jan-2019 22:07:41 Europe/Rome] 1
+[21-Jan-2019 22:07:41 Europe/Rome] 1
+[21-Jan-2019 22:09:43 Europe/Rome] http://2
+[21-Jan-2019 22:09:43 Europe/Rome] http://2
+[21-Jan-2019 22:10:03 Europe/Rome] http://2
+[21-Jan-2019 22:10:03 Europe/Rome] http://2
+[22-Jan-2019 10:45:07 Europe/Rome] 1
+[22-Jan-2019 10:45:07 Europe/Rome] 1
+[22-Jan-2019 13:21:54 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to undefined function sset() in /home/xsigomft/store.believegroup.it/beSTORE/insertion.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/xsigomft/store.believegroup.it/beSTORE/insertion.php on line 13
