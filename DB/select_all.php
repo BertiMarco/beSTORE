@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 } 
 echo "Connessione riuscita\n";
 
-$sql = "SELECT * FROM prestito";
+$sql = "SELECT * FROM oggetto";
 echo "</br>";
 var_dump($sql) . "</br>";
 $result = $conn->query($sql);

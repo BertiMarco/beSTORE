@@ -21,8 +21,8 @@
     $password = "bertistore;2019";
     $dbname = "xsigomft_bestore";
     
-    $nameErr = $idErr = $marcaErr = $annoErr = $lunghezzaErr = $posizioneErr = $pwdErr = "";
-    $pwd = $nome = $id = $marca = $anno = $lunghezza = $posizione = $descrizione = "";
+    $nameErr = $idErr = $marcaErr = $annoErr = $lunghezzaErr = $posizioneErr = $pwdErr = $globalErr = "";
+    $nome = $id = $marca = $anno = $lunghezza = $posizione = $descrizione = "";
     
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -96,42 +96,39 @@
         }
     }
 
-    //$pwd = test_input($_POST['pwd']);   
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
-        $pwd = test_input($_POST['pwd']);
-        if($pwd !== "password") {
-            $pwdErr = "Password errata!";
-        }
+    if($_SERVER["REQUEST_METHOD"] == "POST" && $id != "" && $nome != "" && $posizione != "") {
+
+        $sql = 'SELECT * FROM oggetto WHERE id = ?';
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        $stmt->fetch();
+        $rows = $stmt->num_rows;
+        $stmt->close();
+        if($rows > 0)
+            $idErr = "ID già utilizzato";
         else {
-            $sql = 'SELECT id FROM oggetto WHERE id = ?';
+            //fare INSERT
+            $sql = 'INSERT INTO oggetto(id, nome, marca, anno, lunghezza, posizione, descrizione)
+                VALUES(?, ?, ?, ?, ?, ?, ?)';
+    
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param($id);
-            $stmt->execute();
-            $stmt->fetch();
-            if($stmt->num_rows >=1) {
-                //id già presente.
-                $idErr = "id già utilizzato";
+            $stmt->bind_param("sssssss", $id, $nome, set_empty_to_null($marca), set_empty_to_null($anno), set_empty_to_null($lunghezza), set_empty_to_null($posizione), set_empty_to_null($descrizione));
+            if($stmt->execute() == TRUE) {
+                $stmt->close();
+                $conn->close();
+                header('Location: test.html');
             }
             else {
-                $stmt->close();
-                //fare INSERT
-                $sql = 'INSERT INTO oggetto(id, nome, marca, anno, lunghezza, posizione, descrizione)
-                    VALUES(?, ?, ?, ?, ?, ?, ?)';
-
-                $stmt = $conn->prepare($sql);
-                $stmt->bind_param("sssssss", $id, $nome, set_empty_to_null($marca), set_empty_to_null($anno), set_empty_to_null($lunghezza), set_empty_to_null($posizione), set_empty_to_null($descrizione));
-                if($stmt->execute() == TRUE) {
-                    $stmt->close();
-                    $conn->close();
-                    header('Location: test.html');
-                }
-                else {
-                    echo "NON VA UN CAZZO DI NIENTE </br>";
-                    echo $stmt->error;
-                }
+                echo "NON VA UN CAZZO DI NIENTE </br>";
+                echo $stmt->error;
             }
         }
+
     }
+
+    else
+        $globalErr = "ERRORE: Controlla campi obbligatori";
     
     function test_input($data) {
         $data = trim($data);
@@ -171,10 +168,9 @@
         <br><br>
         Descrizione: <textarea name="description" rows="5" cols="40" value="<?php echo $descrizione;?>"></textarea>
         <br><br>
-        PASSWORD: <input type="password" name="pwd">
-        <span class="error">* <?php echo $pwdErr;?></span>
 
         <input type="submit">
+        <span class="error"><?php echo $globalErr;?></span>
     </form>
 
 </body>
