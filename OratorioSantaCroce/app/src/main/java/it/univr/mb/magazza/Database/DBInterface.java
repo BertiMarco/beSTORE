@@ -84,7 +84,14 @@ public class DBInterface {
                             String nome = response.split(",")[2];
                             String brand = response.split(",")[3];
                             ObjectBuilder.getInstance().itemFound(id, nome, brand);
-                        } else
+                        } else if (response.substring(0,2).equals("ko")) {
+                            String itemId = response.split(",")[1];
+                            String userImei = response.split(",")[2];
+                            String userName = response.split(",")[3];
+                            String userSurname = response.split(",")[4];
+                            ObjectBuilder.getInstance().itemLent(itemId, userImei, userName, userSurname);
+                        }
+                        else
                             ObjectBuilder.getInstance().itemNotFound();
                     }
                 },

@@ -35,4 +35,5 @@
     <string name="edit_button">Modifica</string>
     <string name="liste">La Mia Lista</string>
     <string name="leave_dialog_title">Deposita oggetto</string>
+    <string name="already_lent">Attenzione! Oggetto già in prestito</string>
 </resources>

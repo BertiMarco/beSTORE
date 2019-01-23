@@ -159,7 +159,6 @@ public class QrLasciaFragment extends Fragment {
                     Log.d(TAG, "sparse size: " + barcodes.size() + "\n\nvalue: " + barcodes.toString());
                     ObjectBuilder.getInstance().getItemToLeave(b.rawValue.trim(), (LasciaActivity)getActivity());
                     new CameraThread(mCameraSource).start();
-
                 }
                 precedentValue = b.rawValue;
             }

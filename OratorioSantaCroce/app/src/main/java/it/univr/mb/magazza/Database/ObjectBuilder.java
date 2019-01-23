@@ -151,4 +151,9 @@ public class ObjectBuilder {
         Toast.makeText(mLasciaActivity, "Oggetti depositati", Toast.LENGTH_SHORT).show();
         mLasciaActivity.dispose();
     }
+
+    public void itemLent(String itemId, String userImei, String userName, String userSurname) {
+        User user = new User(userImei, userName, userSurname);
+        mPrendiActivity.itemLent(itemId, user);
+    }
 }

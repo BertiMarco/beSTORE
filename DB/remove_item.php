@@ -42,18 +42,30 @@
     }
 
     if($_SERVER["REQUEST_METHOD"] == "POST" && $id != "") {
-        
-        $sql = 'DELETE FROM oggetto WHERE id = ?';
+
+        $sql = 'SELECT * FROM oggetto WHERE id = ?';
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $id);
-        if($stmt->execute() == TRUE) {
-            $stmt->close();
-            $conn->close();
-            header('Location: test.html');
-        }
+        $stmt->execute();
+        $stmt->fetch();
+        $rows = $stmt->num_rows;
+        $stmt->close();
+        if($rows == 0)
+            $idErr = "id oggetto non presente";
         else {
-            echo "NON VA UN CAZZO DI NIENTE </br>";
-            echo $stmt->error;
+            
+            $sql = 'DELETE FROM oggetto WHERE id = ?';
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $id);
+            if($stmt->execute() == TRUE) {
+                $stmt->close();
+                $conn->close();
+                header('Location: test.html');
+            }
+            else {
+                echo "NON VA UN CAZZO DI NIENTE </br>";
+                echo $stmt->error;
+            }
         }
     }
 

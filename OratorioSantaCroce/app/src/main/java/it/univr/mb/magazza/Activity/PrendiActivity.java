@@ -19,6 +19,7 @@ import it.univr.mb.magazza.Activity.PrendiLasciaFragments.CausaleFragment;
 import it.univr.mb.magazza.Activity.PrendiLasciaFragments.QrPrendiFragment;
 import it.univr.mb.magazza.Database.ObjectBuilder;
 import it.univr.mb.magazza.Model.Item;
+import it.univr.mb.magazza.Model.User;
 import it.univr.mb.magazza.R;
 import it.univr.mb.magazza.Activity.PrendiLasciaFragments.RecapFragment;
 
@@ -132,5 +133,25 @@ public class PrendiActivity extends AppCompatActivity {
         Log.d(TAG, nextFragment.toString());
         if(nextFragment instanceof CausaleFragment)
             ((CausaleFragment) nextFragment).setEvents(events);
+    }
+
+    public void itemLent(String itemId, User user) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.already_lent)
+                .setMessage("Oggetto in prestito a " + user.getName() + user.getSurname());
+
+        builder.setNeutralButton(R.string.ok, (dialogInterface, i) -> {
+            ((QrPrendiFragment)nextFragment).startCamera();
+            dialogInterface.cancel();
+
+        });
+
+        runOnUiThread(() -> {
+            AlertDialog dialog = builder.create();
+            dialog.setCancelable(false);
+            dialog.show();
+        });
+
     }
 }

@@ -12,7 +12,9 @@ if ($conn->connect_error) {
 } 
 echo "Connessione riuscita\n";
 
-$sql = "SELECT * FROM oggetto";
+$sql = "SELECT p.id_oggetto, p.imei_utente, u.nome, u.cognome 
+FROM prestito p JOIN utente u ON p.imei_utente = u.imei
+WHERE p.id_oggetto = 1 AND p.restituito_il IS NULL";
 echo "</br>";
 var_dump($sql) . "</br>";
 $result = $conn->query($sql);
