@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
             // Establishing Connection with Server by passing server_name, user_id and password as a parameter
             if($username == 'admin' || $pwdHash == $solution ) {
                 $_SESSION['login_user'] = $username; // Initializing Session
-                header("Location: main_page.php"); // Redirecting To Other Page
+                header("Location: main_page.php.old"); // Redirecting To Other Page
             } 
             else {
                 $error = "Username or Password is invalid";

@@ -12,21 +12,22 @@ if ($conn->connect_error) {
 } 
 echo "Connessione riuscita\n";
 
-$sql = "SELECT p.id_oggetto, p.imei_utente, u.nome, u.cognome 
-FROM prestito p JOIN utente u ON p.imei_utente = u.imei
-WHERE p.id_oggetto = 1 AND p.restituito_il IS NULL";
+$sql = "SELECT COUNT(*) FROM oggetto ";
 echo "</br>";
 var_dump($sql) . "</br>";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+
+if ($result) {
+
     // output data of each row
-    while($row = $result->fetch_assoc()) {
+    while($row = $result->fetch_row()) {
         foreach($row as $value)
             echo $value . "</br>";
     }
 } 
 else {
+    echo "error: " . $conn->error;
     echo "0 results";
 }
 
