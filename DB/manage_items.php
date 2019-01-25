@@ -13,19 +13,32 @@ if(!isset($_SESSION['login_user'])){
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
     <title>Gestisci magazzino</title>
     <link rel="stylesheet" href="bootsrap/css/bootstrap.min.css">
 </head>
-<body>
-<h1>Gestisci</h1>
+<body id="page-top">
+<?php include ("navbar.html");?>
 
-<a href="add_item.php" class="btn btn-primary" role="button">Aggiungi oggetto al magazzino</a> <br>
-<a href="remove_item.php" class="btn btn-primary" role="button">Rimuovi oggetto dal magazzino</a> <br>
+<div id="wrapper">
 
-<script src="bootsrap/js/bootstrap.min.js"></script>
-<script src="bootsrap/js/bootstrap.bundle.min.js"></script>
+    <?php include("sidebar.html");?>
 
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <h1>Gestisci</h1>
+
+            <a href="add_item.php" class="btn btn-primary" role="button">Aggiungi oggetto al magazzino</a> <br>
+            <a href="remove_item.php" class="btn btn-primary" role="button">Rimuovi oggetto dal magazzino</a> <br>
+
+        </div>
+    </div>
+</div>
+
+        <script src="bootsrap/js/bootstrap.min.js"></script>
+        <script src="bootsrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

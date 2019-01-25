@@ -52,3 +52,32 @@ Stack trace:
 [24-Jan-2019 15:08:17 Europe/Rome] PHP Notice:  Undefined index: COUNT in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 178
 [24-Jan-2019 15:08:17 Europe/Rome] PHP Notice:  Undefined index: COUNT in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 224
 [24-Jan-2019 15:08:17 Europe/Rome] PHP Notice:  Undefined index: COUNT in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 270
+[25-Jan-2019 08:08:31 Europe/Rome] PHP Notice:  Undefined variable: id in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 105
+[25-Jan-2019 08:08:31 Europe/Rome] PHP Notice:  Undefined variable: nameErr in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 109
+[25-Jan-2019 08:08:31 Europe/Rome] PHP Notice:  Undefined variable: marca in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 111
+[25-Jan-2019 10:07:12 Europe/Rome] PHP Notice:  Undefined index: causale in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 15
+[25-Jan-2019 10:07:12 Europe/Rome] PHP Notice:  Undefined index: imei in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 16
+[25-Jan-2019 10:07:12 Europe/Rome] PHP Notice:  Undefined index: date in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 17
+[25-Jan-2019 10:07:12 Europe/Rome] PHP Notice:  Undefined index: itemsID in /home/xsigomft/store.believegroup.it/beSTORE/add_to_borrow.php on line 20
+[25-Jan-2019 10:45:42 Europe/Rome] PHP Notice:  Undefined variable: id in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 105
+[25-Jan-2019 10:45:42 Europe/Rome] PHP Notice:  Undefined variable: nameErr in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 109
+[25-Jan-2019 10:45:42 Europe/Rome] PHP Notice:  Undefined variable: marca in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 111
+[25-Jan-2019 11:12:03 Europe/Rome] PHP Notice:  Undefined variable: id in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 107
+[25-Jan-2019 11:12:03 Europe/Rome] PHP Notice:  Undefined variable: nameErr in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 111
+[25-Jan-2019 11:12:03 Europe/Rome] PHP Notice:  Undefined variable: marca in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 113
+[25-Jan-2019 11:23:55 Europe/Rome] PHP Notice:  Undefined variable: id in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 107
+[25-Jan-2019 11:23:55 Europe/Rome] PHP Notice:  Undefined variable: nameErr in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 111
+[25-Jan-2019 11:23:55 Europe/Rome] PHP Notice:  Undefined variable: marca in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 113
+[25-Jan-2019 11:28:54 Europe/Rome] PHP Notice:  Undefined variable: id in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 107
+[25-Jan-2019 11:28:54 Europe/Rome] PHP Notice:  Undefined variable: nameErr in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 111
+[25-Jan-2019 11:28:54 Europe/Rome] PHP Notice:  Undefined variable: marca in /home/xsigomft/store.believegroup.it/beSTORE/add_user.php on line 113
+[25-Jan-2019 11:38:19 Europe/Rome] PHP Warning:  include(sidebar.html): failed to open stream: No such file or directory in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 100
+[25-Jan-2019 11:38:19 Europe/Rome] PHP Warning:  include(): Failed opening 'sidebar.html' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 100
+[25-Jan-2019 11:38:27 Europe/Rome] PHP Warning:  include(sidebar.html): failed to open stream: No such file or directory in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 100
+[25-Jan-2019 11:38:27 Europe/Rome] PHP Warning:  include(): Failed opening 'sidebar.html' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 100
+[25-Jan-2019 11:38:29 Europe/Rome] PHP Warning:  include(sidebar.html): failed to open stream: No such file or directory in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 100
+[25-Jan-2019 11:38:29 Europe/Rome] PHP Warning:  include(): Failed opening 'sidebar.html' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 100
+[25-Jan-2019 11:38:31 Europe/Rome] PHP Warning:  include(sidebar.html): failed to open stream: No such file or directory in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 100
+[25-Jan-2019 11:38:31 Europe/Rome] PHP Warning:  include(): Failed opening 'sidebar.html' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 100
+[25-Jan-2019 11:42:32 Europe/Rome] PHP Warning:  include(navbar.html): failed to open stream: No such file or directory in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 36
+[25-Jan-2019 11:42:32 Europe/Rome] PHP Warning:  include(): Failed opening 'navbar.html' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/xsigomft/store.believegroup.it/beSTORE/main_page.php on line 36
