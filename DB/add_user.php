@@ -8,6 +8,11 @@
 </head>
 
 <body>
+<!-- Bootstrap -->
+<link href="bootsrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootsrap/js/bootstrap.min.js"></script>
 <?php
 
 session_start();
@@ -21,8 +26,8 @@ $username = "xsigomft_bestore";
 $password = "bertistore;2019";
 $dbname = "xsigomft_bestore";
 
-$imeiErr = $nomeErr = $cognomeErr = $globalErr ="";
-$imei = $nome = $cognome = "";
+$imeiErr = $nameErr = $cognomeErr = $globalErr ="";
+$imei = $name = $cognome = "";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -47,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $nameErr = "Richiesto";
     }
     else {
-        $nome = test_input($_POST['name']);
+        $name = test_input($_POST['name']);
     }
 }
 
@@ -60,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-if($_SERVER["REQUEST_METHOD"] == "POST" && $imei != "" && $nome != "" && $cognome != "") {
+if($_SERVER["REQUEST_METHOD"] == "POST" && $imei != "" && $name != "" && $cognome != "") {
 
     $sql = 'SELECT * FROM utente WHERE imei = ?';
     $stmt = $conn->prepare($sql);
@@ -70,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $imei != "" && $nome != "" && $cognom
     $rows = $stmt->num_rows;
     $stmt->close();
     if($rows > 0)
-        $idErr = "imei già utilizzato";
+        $imeiErr = "imei già utilizzato";
     else {
         //fare INSERT
         $sql = 'INSERT INTO utente(nome, cognome, imei) VALUES(?, ?, ?)';
@@ -104,13 +109,13 @@ function test_input($data) {
     <p><span class="error">* campi obbligatori</span></p>
     <div class="form-group">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            IMEI: <input type="text" class="form-control" name="imei" value="<?php echo $id;?>">
+            IMEI: <input type="text" class="form-control" name="imei" value="<?php echo $imei;?>">
             <span class="error">*<?php echo $imeiErr;?></span>
             <br><br>
-            Nome: <input type="text" class="form-control name="name" value="<?php echo $nome;?>">
+            Nome: <input type="text" class="form-control" name="name" value="<?php echo $name;?>">
             <span class="error">*<?php echo $nameErr;?></span>
             <br><br>
-            Cognome: <input type="text" class="form-control" name="surname" value="<?php echo $marca;?>">
+            Cognome: <input type="text" class="form-control" name="surname" value="<?php echo $cognome;?>">
             <span class="error">*<?php echo $cognomeErr;?></span>
             <br><br>
 
@@ -123,11 +128,5 @@ function test_input($data) {
 </div>
 
 </body>
-
-<!-- Bootstrap -->
-<link href="bootsrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="bootsrap/js/bootstrap.min.js"></script>
 
 </html>

@@ -8,6 +8,12 @@
 </head>
 
 <body>
+<!-- Bootstrap -->
+<link href="bootsrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootsrap/js/bootstrap.min.js"></script>
+
 <?php
 
 session_start();
@@ -95,9 +101,4 @@ function test_input($data) {
 
 </body>
 
-<!-- Bootstrap -->
-<link href="bootsrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="bootsrap/js/bootstrap.min.js"></script>
 </html>

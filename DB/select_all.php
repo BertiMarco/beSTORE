@@ -9,12 +9,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connessione riuscita\n";
+}
+echo "Connessione riuscita <br>";
 
-$sql = "SELECT COUNT(*) FROM oggetto ";
-echo "</br>";
-var_dump($sql) . "</br>";
+$sql = "SELECT id, nome, marca, anno, posizione, descrizione FROM oggetto ";
+//var_dump($sql) . "<br>";
 $result = $conn->query($sql);
 
 
@@ -22,10 +21,12 @@ if ($result) {
 
     // output data of each row
     while($row = $result->fetch_row()) {
-        foreach($row as $value)
-            echo $value . "</br>";
+        $retun_value = "";
+        foreach ($row as $value)
+            $retun_value .= $value . " ";
+        echo $retun_value . "<br>";
     }
-} 
+}
 else {
     echo "error: " . $conn->error;
     echo "0 results";
@@ -33,4 +34,3 @@ else {
 
 $conn->close();
 
-?>

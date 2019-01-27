@@ -8,6 +8,12 @@
 </head>
 
 <body>
+<!-- Bootstrap -->
+<link href="bootsrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootsrap/js/bootstrap.min.js"></script>
+
 <?php
 
 session_start();
@@ -178,12 +184,5 @@ function set_empty_to_null($data) {
 </div>
 
 </body>
-
-<!-- Bootstrap -->
-<link href="bootsrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="bootsrap/js/bootstrap.min.js"></script>
-
 
 </html>
