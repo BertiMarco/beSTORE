@@ -1,7 +1,5 @@
 package it.univr.mb.magazza.Model;
 
-import android.os.Build;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;

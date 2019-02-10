@@ -21,6 +21,7 @@ import android.widget.Toast;
 import java.time.LocalDateTime;
 
 import it.univr.mb.magazza.Activity.MainFragments.AccessFragment;
+import it.univr.mb.magazza.Activity.MainFragments.EventsFragmentTab;
 import it.univr.mb.magazza.Activity.MainFragments.PrendiLasciaFragment;
 import it.univr.mb.magazza.Activity.PrendiLasciaFragments.RecapFragment;
 import it.univr.mb.magazza.R;
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity
             nextFragment = new PrendiLasciaFragment();
         }
         else if (id == R.id.nav_liste) {
-            nextFragment = RecapFragment.newInstance(false);
+            nextFragment = new EventsFragmentTab();
         }
         else if (id == R.id.nav_slideshow) {
 
