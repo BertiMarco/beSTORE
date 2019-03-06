@@ -19,14 +19,13 @@ $stmt->bind_param("s", $_POST['imei']);
 $stmt->execute();
 $stmt->bind_result($nome, $cognome);
 
-while($stmt->fetch()) {
-    $rows = $stmt->num_rows;
-    //echo $rows;
-    if($rows >= 1)
-        echo "ok," . $nome ."," . $cognome;
-    else 
-        echo "ko";
-}
+$stmt->fetch();
+$rows = $stmt->num_rows;
+if($rows >= 1)
+    echo "ok," . $nome ."," . $cognome;
+else
+    echo "ko";
+
 $stmt->close();
 $conn->close();
 

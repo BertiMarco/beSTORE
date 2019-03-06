@@ -81,7 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $imei != "" && $name != "" && $cognom
         $sql = 'INSERT INTO utente(nome, cognome, imei) VALUES(?, ?, ?)';
 
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $nome, $cognome, $imei );
+        $stmt->bind_param("sss", $name, $cognome, $imei );
         if($stmt->execute() == TRUE) {
             $stmt->close();
             $conn->close();

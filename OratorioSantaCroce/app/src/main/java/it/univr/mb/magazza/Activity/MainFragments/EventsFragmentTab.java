@@ -34,6 +34,8 @@ public class EventsFragmentTab extends Fragment {
     private String mParam2;
     private ViewPager mViewPager;
     private TabLayout mTabs;
+    private Adapter mAdapter;
+
 
 
     public EventsFragmentTab() {
@@ -65,28 +67,32 @@ public class EventsFragmentTab extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        setRetainInstance(true);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_events_tab, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
+        View view = inflater.inflate(R.layout.fragment_events_tab, container, false);
+        // Setting ViewPager for each Tabs
         mViewPager = view.findViewById(R.id.viewpager);
+        setupViewPager(mViewPager);
+        // Set Tabs inside Toolbar
         mTabs = view.findViewById(R.id.result_tabs);
+        mTabs.setupWithViewPager(mViewPager);
+
+        return view;
+
     }
+
 
     private void setupViewPager(ViewPager viewPager) {
-        Adapter adapter = new Adapter(getChildFragmentManager());
-        adapter.addFragment(new EventsFragment(), "Eventi in corso");
-        adapter.addFragment(new EndedEventsFragment(), "Eventi terminati");
-        adapter.addFragment(new MyItemsFragment(), "I miei oggetti in prestito");
+        mAdapter = new Adapter(getChildFragmentManager());
+        mAdapter.addFragment(new EventsFragment(), "Eventi in corso");
+        mAdapter.addFragment(new EndedEventsFragment(), "Eventi terminati");
+        mAdapter.addFragment(new MyItemsFragment(), "I miei oggetti in prestito");
+        viewPager.setAdapter(mAdapter);
     }
 
     static class Adapter extends FragmentPagerAdapter {

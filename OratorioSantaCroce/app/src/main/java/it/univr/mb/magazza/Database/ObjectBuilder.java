@@ -2,11 +2,15 @@ package it.univr.mb.magazza.Database;
 
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import it.univr.mb.magazza.Activity.LasciaActivity;
+import it.univr.mb.magazza.Activity.MainFragments.EventsFragment;
 import it.univr.mb.magazza.Activity.PrendiActivity;
 import it.univr.mb.magazza.Activity.MainFragments.AccessFragment;
 import it.univr.mb.magazza.Activity.PrendiLasciaFragments.CausaleFragment;
@@ -16,6 +20,7 @@ import it.univr.mb.magazza.Model.User;
 
 public class ObjectBuilder {
     private static final ObjectBuilder ourInstance = new ObjectBuilder();
+    private static final String TAG = "ObjectBuilder";
     private DBInterface mDBInterface = new DBInterface();
     private User currentUser;
     private AccessFragment mAccessFragment;
@@ -23,6 +28,7 @@ public class ObjectBuilder {
     private PrendiActivity mPrendiActivity;
     private LasciaActivity mLasciaActivity;
     private ArrayList<Item> mItemsToLeave;
+    private EventsFragment mEventsFragment;
 
     public static ObjectBuilder getInstance() {
         return ourInstance;
@@ -155,5 +161,38 @@ public class ObjectBuilder {
     public void itemLent(String itemId, String userImei, String userName, String userSurname) {
         User user = new User(userImei, userName, userSurname);
         mPrendiActivity.itemLent(itemId, user);
+    }
+
+    public void getEventsItems(EventsFragment eventsFragment) {
+        mEventsFragment = eventsFragment;
+        mDBInterface.getEventsItems(eventsFragment.getContext());
+
+    }
+
+    public void eventsItemsFound(ArrayList<String> tuples) {
+        HashMap<String, ArrayList<Item>> eventsItems = new HashMap<>();
+        ArrayList<Item> itemsForEvent = new ArrayList<>();
+        for(String tuple : tuples) {
+            String[] splittedTuple = tuple.split(",");
+            String event = splittedTuple[0];
+            String id = splittedTuple[1];
+            String name = splittedTuple[2];
+
+            Item i = new Item(id, name, "cacca");
+            Log.d(TAG, "ITEM" + i);
+
+            if(eventsItems.containsKey(event)) {
+                ArrayList<Item> tmp = eventsItems.get(event);
+                tmp.add(i);
+            }
+            else{
+                itemsForEvent.add(i);
+                eventsItems.put(event, itemsForEvent);
+                itemsForEvent = new ArrayList<>();
+            }
+        }
+
+        mEventsFragment.adapterReady(eventsItems);
+
     }
 }

@@ -2,6 +2,7 @@ package it.univr.mb.magazza.Activity.MainFragments;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +18,19 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     private Context mContext;
     private List<String> mTitleList;
-    private HashMap<String, List<String>> mItemsList;
-//TODO-> vedere se si può fare costruttore vuto e modificare le mappe dopo. Oppure costruttore cpn solo titoli per caricamento veloce
-    public ExpandableListAdapter(Context context, List<String> titleList, HashMap<String, List<String>> itemsList) {
+    private HashMap<String, List<String>> mItemsMap;
+    private final static String TAG = "ExpandableListAdapter";
+
+//TODO-> vedere se si può fare costruttore vuto e modificare le mappe dopo. Oppure costruttore con solo titoli per caricamento veloce
+    public ExpandableListAdapter(Context context, List<String> titleList, HashMap<String, List<String>> itemsMap) {
         this.mContext = context;
         mTitleList = titleList;
-        mItemsList = itemsList;
+        mItemsMap = itemsMap;
     }
+
+    /*public ExpandableListAdapter() {
+
+    }*/
 
     @Override
     public int getGroupCount() {
@@ -32,7 +39,13 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return mItemsList.get(mItemsList.get(groupPosition)).size();
+        try {
+            return mItemsMap.get(mTitleList.get(groupPosition)).size();
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            Log.e(TAG, "Element not in map");
+            return 0;
+        }
     }
 
     @Override
@@ -42,7 +55,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return mItemsList.get(mTitleList.get(groupPosition)).get(childPosition);
+        return mItemsMap.get(mTitleList.get(groupPosition)).get(childPosition);
     }
 
     @Override

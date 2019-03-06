@@ -31,7 +31,7 @@ import it.univr.mb.magazza.Model.Item;
 import it.univr.mb.magazza.Model.User;
 
 public class DBInterface {
-    private final static String TAG = "DBinterface:";
+    private final static String TAG = "DBinterface";
     private final static String url = "http://store.believegroup.it/beSTORE/"; //TODO metti nelle impostazioni
 
     public void isImeiRegistered(Context context, String imei) {
@@ -280,5 +280,39 @@ public class DBInterface {
         queue.add(stringRequest);
         Log.d(TAG, "richiesta effettuata");
 
+    }
+
+    //TODO-> inutile questa parte, non capisco come fare le query
+    public void getEventsItems(Context context) {
+        RequestQueue queue = Volley.newRequestQueue(context);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url+"events_items.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d(TAG, "RISPOSTA: " + response);
+                        if (response.substring(0, 2).equals("ok")){
+                            String[] tmp = response.split("\\.");
+                            ArrayList<String> tuples = new ArrayList<>(Arrays.asList(tmp));
+                            Log.d(TAG, "SPLITTED: " + tuples);
+                            tuples.remove(0);
+                            Log.d(TAG, "TUPLES: " + tuples.toString());
+                            ObjectBuilder.getInstance().eventsItemsFound(tuples);
+
+                        }
+                        else {
+                            Log.d(TAG, "ramo else");
+                            //ObjectBuilder.getInstance().eventsFound(new ArrayList<>());
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, error.getMessage());
+                        Toast.makeText(context, "Impossibile connettersi al database", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+        queue.add(stringRequest);
     }
 }
