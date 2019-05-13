@@ -36,4 +36,7 @@
     <string name="liste">La Mia Lista</string>
     <string name="leave_dialog_title">Deposita oggetto</string>
     <string name="already_lent">Attenzione! Oggetto già in prestito</string>
+    <string name="csv_explorer">CSV Explorer</string>
+    <string name="browse_button">Esplora</string>
+    <string name="analyze_button">Analizza</string>
 </resources>

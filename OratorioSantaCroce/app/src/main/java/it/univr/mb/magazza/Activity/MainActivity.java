@@ -3,6 +3,7 @@ package it.univr.mb.magazza.Activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -18,12 +19,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.time.LocalDateTime;
-
 import it.univr.mb.magazza.Activity.MainFragments.AccessFragment;
 import it.univr.mb.magazza.Activity.MainFragments.EventsFragmentTab;
+import it.univr.mb.magazza.Activity.MainFragments.LoadCSVFragment;
 import it.univr.mb.magazza.Activity.MainFragments.PrendiLasciaFragment;
-import it.univr.mb.magazza.Activity.PrendiLasciaFragments.RecapFragment;
 import it.univr.mb.magazza.R;
 
 public class MainActivity extends AppCompatActivity
@@ -32,6 +31,7 @@ public class MainActivity extends AppCompatActivity
     public static final String LOGGED = "logged" ;
     private static final int PHONE_STATE = 100;
     private static final String TAG = "MainActivity";
+    private static final int READ_STORAGE = 101;
     private Fragment nextFragment = null;
     private DrawerLayout mDrawer;
     private boolean logged;
@@ -113,7 +113,8 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.nav_liste) {
             nextFragment = new EventsFragmentTab();
         }
-        else if (id == R.id.nav_slideshow) {
+        else if (id == R.id.nav_csv_explorer) {
+            nextFragment = new LoadCSVFragment();
 
         }
         else if (id == R.id.nav_manage) {
@@ -147,6 +148,15 @@ public class MainActivity extends AppCompatActivity
                 new String[]{Manifest.permission.READ_PHONE_STATE}, PHONE_STATE);
     }
 
+    public boolean checkStoragePermission() {
+        return (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
+    }
+
+    public void requestStoragePermission() {
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},READ_STORAGE);
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -165,7 +175,24 @@ public class MainActivity extends AppCompatActivity
                     Toast.makeText(this, "Permesso telefono negato.", Toast.LENGTH_SHORT).show();
                 }
             }
+            case READ_STORAGE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // permission was granted, yay! Do the
+                    //Toast.makeText(this, "LOCATION GRANTED", Toast.LENGTH_SHORT).show();
+                    try {
+                        //TODO-> capire cosa devo fare qui dentro
+                    } catch (Exception e){
+
+                    }
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this, "Permesso accesso alla memoria negato.", Toast.LENGTH_SHORT).show();
+                }
+
+            }
         }
+
     }
 
     public void launchPrendiLasciaFragment() {
@@ -189,4 +216,9 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    public void launchCSVActivity(Uri uri) {
+        Intent intent = new Intent(getApplicationContext(), CSVExplorerActivity.class);
+        intent.putExtra("filePath", uri.toString());
+        startActivity(intent);
+    }
 }

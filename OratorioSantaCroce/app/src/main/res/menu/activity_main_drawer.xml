@@ -13,9 +13,9 @@
             android:icon="@drawable/ic_menu_recap"
             android:title="@string/liste" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_csv_explorer"
+            android:icon="@drawable/ic_find_in_page_black_24dp"
+            android:title="@string/csv_explorer" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
