@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "xsigomft_bestore";
-$password = "bertistore;2019";
-$dbname = "xsigomft_bestore";
+require 'database.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

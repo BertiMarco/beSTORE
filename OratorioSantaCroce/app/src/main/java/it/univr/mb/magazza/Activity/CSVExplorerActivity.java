@@ -16,7 +16,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import it.univr.mb.magazza.Activity.CSVExplorerFragments.ShowCSVFragment;
 import it.univr.mb.magazza.R;
@@ -26,6 +28,7 @@ public class CSVExplorerActivity extends AppCompatActivity {
 
     private Uri fileUri;
     private Fragment nextFragment;
+    private Map<String, String> idRow = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +38,19 @@ public class CSVExplorerActivity extends AppCompatActivity {
         String filePath = intent.getStringExtra("filePath");
         fileUri = Uri.parse(filePath);
         List<String[]> result = readFile();
-        StringBuilder toShow = new StringBuilder();
         for(String[] s : result) {
-            for (String s1 : s) {
-                Log.d(TAG, "RIGA" + s1);
-                toShow.append(s1);
+            String[] s1 = s[0].split(",");
+            StringBuilder row = new StringBuilder();
+            for (int i = 1; i < s1.length; i++) {
+                row.append(s1[i]).append(" | ");
             }
-            toShow.append("\n");
+            //Log.d(TAG, "RIGA " + row);
+            idRow.put(s1[0], row.toString());
         }
-        Log.d(TAG, "STRINGA " + toShow);
+        //Log.d(TAG, "STRINGA " + idRow);
 
 
-        nextFragment = ShowCSVFragment.newInstance(toShow.toString());
+        nextFragment = ShowCSVFragment.newInstance(idRow.toString());
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_csv, nextFragment).commit();
 

@@ -1,9 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "xsigomft_bestore";
-$password = "bertistore;2019";
-$dbname = "xsigomft_bestore";
-
+require 'database.php';
 $nameErr = $idErr = $marcaErr = $annoErr = $lunghezzaErr = $posizioneErr = "";
 $nome = $id = $marca = $anno = $lunghezza = $posizione = $descrizione = "";
 
@@ -84,8 +80,6 @@ if($_POST['pwd'] === "password") {
     $sql = 'SELECT id FROM oggetto WHERE id = ?';
     $stmt = $conn->prepare($sql);
     $stmt->bind_param($id);
-
-    if
 }
 
 

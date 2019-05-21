@@ -1,11 +1,11 @@
 CREATE TABLE utente(
     nome VARCHAR(255),
     cognome VARCHAR(255),
-    imei VARCHAR(255) PRIMARY KEY
+    imei VARCHAR(100) PRIMARY KEY
 );
 
 CREATE TABLE oggetto(
-    id VARCHAR(255) PRIMARY KEY,
+    id VARCHAR(100) PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     immagine VARCHAR(255),
     marca VARCHAR(255),
@@ -16,8 +16,8 @@ CREATE TABLE oggetto(
 );
 
 CREATE TABLE prestito(
-    id_oggetto VARCHAR(255) REFERENCES oggetto,
-    imei_utente VARCHAR(255) REFERENCES utente,
+    id_oggetto VARCHAR(100) REFERENCES oggetto,
+    imei_utente VARCHAR(100) REFERENCES utente,
     preso_il TIMESTAMP,
     evento VARCHAR(255) NOT NULL,
     restituito_il TIMESTAMP NULL,

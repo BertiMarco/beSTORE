@@ -16,10 +16,7 @@
         header("location: index.php");
     }
 
-    $servername = "localhost";
-    $username = "xsigomft_bestore";
-    $password = "bertistore;2019";
-    $dbname = "xsigomft_bestore";
+    require 'database.php';
     
     $imeiErr = "";
     $imei = "";
