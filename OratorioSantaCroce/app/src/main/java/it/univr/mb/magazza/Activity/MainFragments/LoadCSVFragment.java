@@ -54,22 +54,23 @@ public class LoadCSVFragment extends Fragment {
         browse.setOnClickListener(v-> onBrowseButtonCLicked());
 
         analyze = view.findViewById(R.id.analyze_button);
-        analyze.setOnClickListener(v-> onAnalyzeButtonClocked());
+        analyze.setOnClickListener(v-> onAnalyzeButtonClicked());
 
 
 
     }
 
-    private void onAnalyzeButtonClocked() {
+    private void onAnalyzeButtonClicked() {
         if(path == null)
             Toast.makeText(getContext(), "Scegli un file in formato CSV", Toast.LENGTH_SHORT).show();
         else {
-            String extension = path[1].substring(path[1].lastIndexOf(".")).toLowerCase();
+            ((MainActivity)getActivity()).launchCSVActivity(uri);
+            /*String extension = path[1].substring(path[1].lastIndexOf(".")).toLowerCase();
             Log.d(TAG, extension);
             if (!extension.equals(".csv"))
                 Toast.makeText(getContext(), "Formato non valido", Toast.LENGTH_SHORT).show();
             else
-                ((MainActivity)getActivity()).launchCSVActivity(uri);
+                ((MainActivity)getActivity()).launchCSVActivity(uri);*/
         }
 
     }
@@ -94,8 +95,8 @@ public class LoadCSVFragment extends Fragment {
         if(resultCode == RESULT_OK && requestCode == ACTIVITY_CHOOSE_FILE)
         {
             uri = data.getData();
-            Log.d(TAG, "Uri: " + uri.toString());
-            path = uri.getPath().split(":");
+            Log.d(TAG, "Uri: " + uri.getPath());
+            path = uri.toString().split(":");
             filePath = path[1];
             pathTextView.setText(filePath);
             Log.d(TAG, "File Path: " + path);

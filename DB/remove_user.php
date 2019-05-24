@@ -37,32 +37,39 @@
             $imei = test_input($_POST['imei']);
         }
     }
+    var_dump($_POST['imei']);
 
-    if($_SERVER["REQUEST_METHOD"] == "POST" && $imei != "") {
+    if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['imei'] != "") {
 
         $sql = 'SELECT * FROM utente WHERE imei = ?';
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $imei);
         $stmt->execute();
-        $stmt->fetch();
+        while($stmt->fetch());
         $rows = $stmt->num_rows;
         $stmt->close();
-        if($rows == 0)
+        if($rows == 0) {
             $imeiErr = "imei non presente";
-        else {
-            $sql = 'DELETE FROM utente WHERE imei = ?';
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $imei);
-            if($stmt->execute() == TRUE) {
-                $stmt->close();
-                $conn->close();
-                header('Location: test.html');
-            }
-            else {
-                echo "NON VA UN CAZZO DI NIENTE </br>";
-                echo $stmt->error;
-            }
+            $found = false;
         }
+        else
+
+
+            $found = true;
+    if($_SERVER["REQUEST_METHOD"] == "POST" && $found){
+        $sql = 'DELETE FROM utente WHERE imei = ?';
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $imei);
+        if($stmt->execute() == TRUE) {
+            $stmt->close();
+            $conn->close();
+            header('Location: test.html');
+        }
+        else {
+            echo "NON VA UN CAZZO DI NIENTE </br>";
+            echo $stmt->error;
+        }
+    }
     }
 
     function test_input($data) {
@@ -76,7 +83,7 @@
 <h2>Rimuovi utente</h2>
 <p><span class="error">* campi obbligatori</span></p>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        ID: <input type="text" name="imei" value="<?php echo $imei;?>">
+        ID: <input type="text" contenteditable="false" name="imei" value="<?php echo $imei;?>">
         <span class="error">*<?php echo $imeiErr;?></span>
         <br><br>
     <input type="submit">

@@ -19,7 +19,7 @@ $stmt->execute();
 //echo "stmt executed";
 $stmt->bind_result($nome, $cognome);
 //ATTENZIONE: non ho capito come funziona. Probabilemte il while è inutile ma così va.
-while($stmt->fetch()) {}
+while($stmt->fetch());
 //echo "fetched";
 $rows = $stmt->num_rows;
 //echo "ROWS: $rows";

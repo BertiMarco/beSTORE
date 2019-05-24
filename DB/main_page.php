@@ -24,8 +24,8 @@ require 'database.php';
     <!-- Bootstrap core CSS-->
     <link href="bootsrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template-->
-    <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 
     <!-- Page level plugin CSS-->
     <link href="bootsrap/css/dataTables.bootstrap4.css" rel="stylesheet">
@@ -212,70 +212,6 @@ require 'database.php';
                         </a>
                     </div>
                 </div>
-            </div>
-
-            <?php
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            $sql = "SELECT id, nome, marca, anno, posizione, descrizione FROM oggetto ";
-            //var_dump($sql) . "<br>";
-            $result = $conn->query($sql);
-
-            ?>
-
-            <!-- DataTables Example -->
-            <div class="card mb-3">
-                <div class="card-header">
-                    <i class="fas fa-table"></i>
-                    Oggetti registrati</div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nome</th>
-                                <th>Marca</th>
-                                <th>Anno</th>
-                                <th>Posizione</th>
-                                <th>Descrizione</th>
-                            </tr>
-                            </thead>
-                            <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nome</th>
-                                <th>Marca</th>
-                                <th>Anno</th>
-                                <th>Posizione</th>
-                                <th>Descrizione</th>
-                            </tr>
-                            </tfoot>
-                            <tbody>
-
-                            <?php
-                            if ($result)
-                                // output data of each row
-                                while($row = $result->fetch_row()):?>
-                                    <tr>
-                                        <td><?echo $row[0];?></td>
-                                        <td><?echo $row[1];?></td>
-                                        <td><?echo $row[2];?></td>
-                                        <td><?echo $row[3];?></td>
-                                        <td><?echo $row[4];?></td>
-                                        <td><?echo $row[5];?></td>
-                                    </tr>
-                                <?php endwhile;?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
             </div>
 
         </div>

@@ -50,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $id != "") {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $id);
     $stmt->execute();
-    $stmt->fetch();
+    while ($stmt->fetch());
     $rows = $stmt->num_rows;
     $stmt->close();
     if($rows == 0)

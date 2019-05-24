@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $imei != "" && $name != "" && $cognom
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $imei);
     $stmt->execute();
-    $stmt->fetch();
+    while ($stmt->fetch());
     $rows = $stmt->num_rows;
     $stmt->close();
     if($rows > 0)

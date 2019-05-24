@@ -29,7 +29,7 @@ error_log(print_r("param binded", TRUE));
 $executed = $stmt->execute();
 error_log(print_r("executed ". $executed, TRUE));
 $stmt->bind_result($id, $nome, $marca);
-$stmt->fetch();
+while($stmt->fetch());
 $rows = $stmt->num_rows;
 error_log(print_r("rows " . $rows, TRUE));
 $stmt->close();
@@ -43,7 +43,7 @@ else {
     $stmt->bind_param("s", $id);
     $executed = $stmt->execute();
     $stmt->bind_result($id, $imei, $user_name, $user_surname);
-    $stmt->fetch();
+    while ($stmt->fetch());
     $rows = $stmt->num_rows;
     error_log(print_r("ROWS " . $rows, TRUE));
     if($rows >= 1)
