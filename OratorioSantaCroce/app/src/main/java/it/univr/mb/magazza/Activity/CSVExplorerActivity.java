@@ -9,20 +9,19 @@ import android.os.Bundle;
 import android.util.Log;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileDescriptor;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
+import it.univr.mb.magazza.Activity.CSVExplorerFragments.CsvFieldSelectionFragment;
 import it.univr.mb.magazza.Activity.CSVExplorerFragments.ShowCSVFragment;
+import it.univr.mb.magazza.Database.ObjectBuilder;
+import it.univr.mb.magazza.Model.GenericCsv;
 import it.univr.mb.magazza.R;
 
 public class CSVExplorerActivity extends AppCompatActivity {
@@ -30,7 +29,11 @@ public class CSVExplorerActivity extends AppCompatActivity {
 
     private Uri fileUri;
     private Fragment nextFragment;
-    private Map<String, String> idRow = new HashMap<>();
+    private ArrayList<GenericCsv> idRow = new ArrayList<>();
+    private List<String> mResult;
+    private String[] mFirstLineArray;
+    private String mFirstFiedlToShow;
+    private String mSecondFieldToShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,31 +42,64 @@ public class CSVExplorerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String filePath = intent.getStringExtra("filePath");
         fileUri = Uri.parse(filePath);
-        //String res = readFile();
-        List<String> result = readFile();
-        for(String s : result) {
-            String[] s1 = s.split("\t");
-            Log.d(TAG, "LENGTH: " + s1.length);
-            StringBuilder row = new StringBuilder();
-            for (int i = 1; i < s1.length; i++) {
-                row.append(s1[i]).append(" | ");
-            }
-            Log.d(TAG, "RIGA " + row.toString());
-            idRow.put(s1[9], row.toString());
-        }
-        Log.d(TAG, "STRINGA " + idRow);
+        ArrayList<String> firstLine = (ArrayList<String>) readFirstLine();
+        mFirstLineArray = firstLine.toArray(new String[0]);
+        mResult = readFile();
 
-        StringBuilder res = new StringBuilder();
-        int i = 0;
-        for(String id : idRow.keySet()) {
-            res.append(i).append(" ").append(id).append("=").append(idRow.get(id)).append("\n");
-            i++;
-        }
-        nextFragment = ShowCSVFragment.newInstance(res.toString());
+        //TODO-> verificare cosa succede ma dovrebbe essere giusto. Devo fare altri giri i sistemare però
+
+        //nextFragment = ShowCSVFragment.newInstance(res.toString());
         //nextFragment = ShowCSVFragment.newInstance(res);
+        nextFragment = CsvFieldSelectionFragment.newInstance(firstLine);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_csv, nextFragment).commit();
 
+    }
+
+    private List<String> readFirstLine() {
+        ParcelFileDescriptor parcelFileDescriptor = null;
+        try {
+            parcelFileDescriptor = getContentResolver().openFileDescriptor(fileUri, "r");
+        }
+        catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        }
+
+        FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
+        InputStream inputStream = null;
+        try {
+            inputStream = getContentResolver().openInputStream(fileUri);
+        }
+        catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        }
+
+        ArrayList<String> toReturn = new ArrayList<>();
+
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            line = reader.readLine();
+            String[] split;
+            split = line.split("\t");
+            toReturn.addAll(Arrays.asList(split));
+            reader.close();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        try {
+            inputStream.close();
+        }
+        catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        try {
+            parcelFileDescriptor.close();
+        }
+        catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        return toReturn;
     }
 
     private List<String> readFile() {
@@ -93,6 +129,7 @@ public class CSVExplorerActivity extends AppCompatActivity {
             StringBuilder stringBuilder = new StringBuilder();
             String line;
             int i = 0;
+            reader.readLine();
             while((line = reader.readLine()) != null) {
                 //Log.d(TAG, "WHILE LINE " + i + ": " + line);
                 if(line.split("\t").length != 1) {
@@ -118,28 +155,29 @@ public class CSVExplorerActivity extends AppCompatActivity {
             e1.printStackTrace();
         }
         return csvLine;
+    }
+
+    public void createCsvItem(String id) {
+
+        for(String s : mResult) {
+            String[] s1 = s.split("\t");
+            Log.d(TAG, "s1_LENGTH: " + s1.length + " fields_LENGTH " + mFirstLineArray.length + " id -> " +id);
+            GenericCsv csvItem = new GenericCsv(mFirstLineArray, id, s1);
+            Log.d(TAG, "RIGA " + csvItem.toString());
+            idRow.add(csvItem);
         }
+        Log.d(TAG, "STRINGA " + idRow);
 
+        ObjectBuilder.getInstance().setCsvList(idRow);
+    }
 
+    public void setFiedsToShow(String first, String second) {
+        mFirstFiedlToShow = first;
+        mSecondFieldToShow = second;
+    }
 
-        /*File file = new File(fileUri.getPath().split(":")[1]);
-        Log.d(TAG, "File " + file);
-
-        List<String[]> csvLine = new ArrayList<>();
-        String[] content;
-        try {
-            InputStream inputStream = new FileInputStream(file);
-            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
-            String line = "";
-            while((line = br.readLine()) != null){
-                content = line.split("\n");
-                csvLine.add(content);
-            }
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return csvLine;
-
-    }*/
+    public void launchShowFragment() {
+        nextFragment = ShowCSVFragment.newInstance(mFirstFiedlToShow, mSecondFieldToShow);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_csv, nextFragment).commit();
+    }
 }

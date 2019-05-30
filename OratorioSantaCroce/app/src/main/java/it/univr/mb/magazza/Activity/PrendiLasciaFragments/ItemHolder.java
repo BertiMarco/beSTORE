@@ -29,7 +29,7 @@ public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickL
     }
 
     private void onCancelButtonClick() {
-        Log.d(TAG, "cancel buton clickato");
+        Log.d(TAG, "cancel button clicked");
         owner.removeItem(mItem);
 
     }
@@ -37,7 +37,7 @@ public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickL
     @Override
     public void onClick(View v) {
         //TODO->
-        Log.d(TAG, "Elemento clickato");
+        Log.d(TAG, "element clicked");
         changeFragment(mItem);
     }
 

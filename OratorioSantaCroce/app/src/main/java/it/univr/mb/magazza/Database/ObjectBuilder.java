@@ -1,20 +1,20 @@
 package it.univr.mb.magazza.Database;
 
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import it.univr.mb.magazza.Activity.LasciaActivity;
 import it.univr.mb.magazza.Activity.MainFragments.EventsFragment;
 import it.univr.mb.magazza.Activity.PrendiActivity;
 import it.univr.mb.magazza.Activity.MainFragments.AccessFragment;
-import it.univr.mb.magazza.Activity.PrendiLasciaFragments.CausaleFragment;
 import it.univr.mb.magazza.Model.Borrow;
+import it.univr.mb.magazza.Model.GenericCsv;
 import it.univr.mb.magazza.Model.Item;
 import it.univr.mb.magazza.Model.User;
 
@@ -29,6 +29,7 @@ public class ObjectBuilder {
     private LasciaActivity mLasciaActivity;
     private ArrayList<Item> mItemsToLeave;
     private EventsFragment mEventsFragment;
+    private List<GenericCsv> mCsvList;
 
     public static ObjectBuilder getInstance() {
         return ourInstance;
@@ -194,5 +195,12 @@ public class ObjectBuilder {
 
         mEventsFragment.adapterReady(eventsItems);
 
+    }
+    public void setCsvList(ArrayList<GenericCsv> csvList) {
+        mCsvList = csvList;
+    }
+
+    public List<GenericCsv> getCsvList() {
+        return mCsvList;
     }
 }

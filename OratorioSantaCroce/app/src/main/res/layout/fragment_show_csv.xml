@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.CSVExplorerFragments.ShowCSVFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.CSVExplorerFragments.ShowCSVFragment"
+    android:weightSum="5"
+    android:orientation="vertical">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ScrollView
+        android:layout_height="0dp"
+        android:layout_weight="4">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/show_csv_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/csv_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </HorizontalScrollView>
+            android:layout_height="match_parent"
+            tools:listitem="@layout/csv_item_listitem">
 
-        </ScrollView>
+        </android.support.v7.widget.RecyclerView>
 
     </android.support.constraint.ConstraintLayout>
+    <include layout="@layout/qr_reader"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
-</FrameLayout>
+    </include>
+</LinearLayout>

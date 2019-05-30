@@ -6,11 +6,17 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.Map;
+
+import it.univr.mb.magazza.Activity.PrendiLasciaFragments.ItemAdapter;
+import it.univr.mb.magazza.Database.ObjectBuilder;
 import it.univr.mb.magazza.R;
 
 /**
@@ -23,12 +29,13 @@ import it.univr.mb.magazza.R;
 public class ShowCSVFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "StringFromCSVFile";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "firstToShow";
+    private static final String ARG_PARAM2 = "secondToShow";
 
     // TODO: Rename and change types of parameters
-    private String stringFromCSVFile;
-    private TextView CSVContent;
+    private String mFirstFieldToShow;
+    private String mSecondFieldToShow;
+    private RecyclerView mRecyclerView;
 
 
     public ShowCSVFragment() {
@@ -43,10 +50,12 @@ public class ShowCSVFragment extends Fragment {
      * @return A new instance of fragment ShowCSVFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ShowCSVFragment newInstance(String param1) {
-        ShowCSVFragment fragment = new ShowCSVFragment();
+    public static ShowCSVFragment newInstance(String param1, String param2) {
+
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        ShowCSVFragment fragment = new ShowCSVFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -54,9 +63,16 @@ public class ShowCSVFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
-            stringFromCSVFile = getArguments().getString(ARG_PARAM1);
+            mFirstFieldToShow = getArguments().getString(ARG_PARAM1);
+            mSecondFieldToShow = getArguments().getString(ARG_PARAM2);
         }
+/*        int i = 0;
+        for(String id : mCsvMap.keySet()) {
+            stringFromCSVFile.append(i).append(" ").append(id).append("=").append(mCsvMap.get(id)).append("\n");
+            i++;
+        }*/
     }
 
     @Override
@@ -69,10 +85,10 @@ public class ShowCSVFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        CSVContent = view.findViewById(R.id.csv_content);
-        CSVContent.setText(stringFromCSVFile);
 
-
+        mRecyclerView = view.findViewById(R.id.show_csv_recyclerview);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setAdapter(new CsvItemAdapter(this));
     }
 
     @Override
@@ -80,4 +96,11 @@ public class ShowCSVFragment extends Fragment {
         super.onDetach();
     }
 
+    public String getFirstFieldToShow() {
+        return  mFirstFieldToShow;
+    }
+
+    public String getSecondFieldToShow() {
+        return mSecondFieldToShow;
+    }
 }

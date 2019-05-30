@@ -10,7 +10,8 @@ if ($conn->connect_error) {
 }
 echo "Connessione riuscita <br>";
 
-$sql = "SELECT * FROM utente";
+$sql = "SELECT p.evento, o.id, o.nome FROM prestito p JOIN oggetto o ON o.id = p.id_oggetto
+        WHERE restituito_il IS NULL";
 //var_dump($sql) . "<br>";
 $result = $conn->query($sql);
 

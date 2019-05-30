@@ -39,4 +39,6 @@
     <string name="csv_explorer">CSV Explorer</string>
     <string name="browse_button">Esplora</string>
     <string name="analyze_button">Analizza</string>
+    <string name="id_selection">Su quale campo vuoi eseguire la ricerca?</string>
+    <string name="show_fields_title">Quali campi vuoi visualizzare?</string>
 </resources>
